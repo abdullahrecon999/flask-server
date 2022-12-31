@@ -5,10 +5,10 @@ from classes import *
 # config system
 app = Flask(__name__)
 app.config.update(dict(SECRET_KEY='yoursecretkey'))
-client = MongoClient('localhost:27017')
+client = MongoClient('mongo:27017')
 db = client.TaskManager
 
-if db.settings.find({'name': 'task_id'}).count() <= 0:
+if db.settings.count_documents({'name': 'task_id'}) <= 0:
     print("task_id Not found, creating....")
     db.settings.insert_one({'name':'task_id', 'value':0})
 
@@ -92,4 +92,4 @@ def main():
             data = data, reset = reset)
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
