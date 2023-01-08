@@ -5,7 +5,7 @@ from classes import *
 # config system
 app = Flask(__name__)
 app.config.update(dict(SECRET_KEY='yoursecretkey'))
-client = MongoClient('mongo:27017')
+client = MongoClient('localhost:27017')
 db = client.TaskManager
 
 if db.settings.count_documents({'name': 'task_id'}) <= 0:

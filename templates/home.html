@@ -62,12 +62,17 @@
     </div>
     <br>
     <br>
-    <b>Tasks List:</b><br><br>
+    <b>Tasks List:</b>
+    <br>
+    <br>
     {% for i in data %}
+        <div id ='Task {{ i["id"] }}'>
         ID = {{ i["id"] }} <br>
         Title = {{ i["title"] }}<br>
         Short Description = {{ i["shortdesc"] }} <br>
-        Priority = {{ i["priority"] }}<br><br>
+        Priority = {{ i["priority"] }}
+        </div>
+        <br><br>
     {% endfor %}
   </body>
 </html>
