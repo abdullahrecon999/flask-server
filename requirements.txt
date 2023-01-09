@@ -1,5 +1,6 @@
 Flask
 Flask-WTF
 pymongo
-waitress
-pm2
+selenium
+pytest
+unittest
